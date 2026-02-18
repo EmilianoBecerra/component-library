@@ -23,5 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 
 export const TaxonomyTreeCode: Story = {
-
+    args: {
+        isLoading: false
+    }
 }

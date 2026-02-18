@@ -1,19 +1,16 @@
 import './globals.css'
 import { ChildrenLevel } from './components/ChildrenLevel.tsx';
-import { useEffect, useState } from 'react';
 import { Skeleton } from "@/components/ui/skeleton"
 
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
+function App({ isLoading }: { isLoading: boolean }) {
   const treeData = [
     {
       node_id: 1,
       graph_id: 100,
       source_id: "root-001",
       name: "Infraestructura Global",
-      metadata: { image_url: "https://api.icon/cloud.png", region: "AWS" },
+      metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
       parent_ids: [],
       children: [
         {
@@ -28,15 +25,15 @@ function App() {
               graph_id: 100,
               source_id: "db-001",
               name: "PostgreSQL Master",
-              metadata: { port: 5432, status: "active" },
+              metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
               parent_ids: [2],
               children: [
                 {
-                  node_id: 10, // <--- ESTE NODO TIENE DOS PADRES (4 y 5)
+                  node_id: 10,
                   graph_id: 100,
                   source_id: "sync-001",
                   name: "Servicio de Backup Híbrido",
-                  metadata: { type: "Cross-platform" },
+                  metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
                   parent_ids: [4, 5],
                   children: []
                 }
@@ -64,6 +61,7 @@ function App() {
                   graph_id: 100,
                   source_id: "sync-001",
                   name: "Servicio de Backup Híbrido",
+                  metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "minion" },
                   parent_ids: [4, 5],
                   children: []
                 },
@@ -79,7 +77,7 @@ function App() {
                       graph_id: 100,
                       source_id: "sub-srv-001",
                       name: "Módulo 2FA (Deep Child)",
-                      metadata: { provider: "Google" },
+                      metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
                       parent_ids: [6],
                       children: []
                     }
@@ -92,16 +90,6 @@ function App() {
       ]
     }
   ];
-
-  useEffect(() => {
-    // Simulamos una carga de 2 segundos
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [])
-
 
   return (
     <div className='min-h-1 m-5 w-12/12 --font-font-mono --color-primary grid '>

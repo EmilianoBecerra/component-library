@@ -12,7 +12,6 @@ import { ChevronRightIcon } from "lucide-react";
 export function ChildrenLevel({ treeNode, depth = 1 }: { treeNode: TreeNode, depth?: number }) {
     const [openChildren, setOpenChildren] = useState(true);
 
-
     return (
         <Collapsible open={openChildren} onOpenChange={setOpenChildren} className="group" style={{ marginLeft: depth * 5 }}>
             {treeNode.children && treeNode.children.length > 0 ?
@@ -31,8 +30,8 @@ export function ChildrenLevel({ treeNode, depth = 1 }: { treeNode: TreeNode, dep
                                     {c.children && c.children.length > 0 ?
                                         <ChildrenLevel treeNode={c} depth={depth + 1} /> :
                                         <div className="flex items-center gap-2" style={{ marginLeft: (depth + 1) * 5 }}>
-                                            {c.metadata?.image_url && <img src={c.metadata.image_url} className="h-6 w-6" />}
-                                            <p style={{ fontWeight: "lighter" }}>{c.name}</p>
+                                            {c.metadata?.image_url && <img src={c.metadata.image_url} className="size-4" />}
+                                            <p>{c.name}</p>
                                         </div>
                                     }
                                 </CollapsibleContent>

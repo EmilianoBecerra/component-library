@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ChildrenLevel } from "./ChildrenLevel.tsx";
-import ChildrenLevelSource from "./ChildrenLevel.tsx?raw";
+import { ChildrenLevel } from "@/components/ChildrenLevel";
+import ChildrenLevelSource from "@/components/ChildrenLevel.tsx?raw";
 
 
 
@@ -13,7 +13,7 @@ const meta = {
                 code: ChildrenLevelSource,
                 language: "tsx",
                 type: "code"
-            }
+            },
         }
     }
 } satisfies Meta<typeof ChildrenLevel>;
@@ -24,56 +24,90 @@ type Story = StoryObj<typeof meta>;
 
 export const ChildrenLevelCode: Story = {
     args: {
-        childrens: {
-            node_id: 2,
-            graph_id: 2,
-            source_id: "222",
-            name: "Food & Beverages",
+        treeNode: {
+            node_id: 1,
+            graph_id: 100,
+            source_id: "root-001",
+            name: "Infraestructura Global",
+            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
+            parent_ids: [],
             children: [
                 {
-                    node_id: 3,
-                    graph_id: 3,
-                    source_id: "321",
-                    name: "Fresh Produce",
+                    node_id: 2,
+                    graph_id: 100,
+                    source_id: "dep-001",
+                    name: "Capa de Datos",
+                    parent_ids: [1],
                     children: [
                         {
-                            node_id: 182309182039128,
-                            graph_id: 182309182039128,
-                            source_id: "dsalkhaslkdjhasdlk",
-                            name: "Fruits",
-                            metadata: { key: "123", image_url: "https://cdn-icons-png.flaticon.com/128/3137/3137044.png" }
-                        },
-                        {
-                            node_id: 9182409182999,
-                            graph_id: 9182409182999,
-                            source_id: "99128310298318391jkasjdj",
-                            name: "Vegetables",
-                            metadata: { key: "123", image_url: "https://cdn-icons-png.flaticon.com/128/3137/3137044.png" }
+                            node_id: 4,
+                            graph_id: 100,
+                            source_id: "db-001",
+                            name: "PostgreSQL Master",
+                            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
+                            parent_ids: [2],
+                            children: [
+                                {
+                                    node_id: 10,
+                                    graph_id: 100,
+                                    source_id: "sync-001",
+                                    name: "Servicio de Backup Híbrido",
+                                    metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
+                                    parent_ids: [4, 5],
+                                    children: []
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    node_id: 4,
-                    graph_id: 4,
-                    source_id: "333",
-                    name: "Dairy",
+                    node_id: 3,
+                    graph_id: 100,
+                    source_id: "dep-002",
+                    name: "Capa de Aplicación",
+                    parent_ids: [1],
                     children: [
                         {
-                            node_id: 1782390712,
-                            graph_id: 1782390712,
-                            source_id: "nlkkkasdj9qwe9",
-                            name: "Milk",
-                        },
-                        {
-                            node_id: 9099182391283,
-                            graph_id: 9099182391283,
-                            source_id: "asdasdffffasdasd",
-                            name: "Cheese",
-                        },
+                            node_id: 5,
+                            graph_id: 100,
+                            source_id: "srv-001",
+                            name: "API Gateway",
+                            metadata: { auth: "JWT" },
+                            parent_ids: [3],
+                            children: [
+                                {
+                                    node_id: 10,
+                                    graph_id: 100,
+                                    source_id: "sync-001",
+                                    name: "Servicio de Backup Híbrido",
+                                    metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "minion" },
+                                    parent_ids: [4, 5],
+                                    children: []
+                                },
+                                {
+                                    node_id: 6,
+                                    graph_id: 100,
+                                    source_id: "srv-002",
+                                    name: "Microservicio Auth",
+                                    parent_ids: [5],
+                                    children: [
+                                        {
+                                            node_id: 7,
+                                            graph_id: 100,
+                                            source_id: "sub-srv-001",
+                                            name: "Módulo 2FA (Deep Child)",
+                                            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
+                                            parent_ids: [6],
+                                            children: []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
         },
-        depth: 1
+        depth: 0
     }
 }

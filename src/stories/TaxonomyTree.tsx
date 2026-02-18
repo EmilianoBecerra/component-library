@@ -1,105 +1,112 @@
-import type { TreeNode } from '@/interface/interface.ts'
+/* import type { TreeNode } from '@/interface/interface.ts' */
 import '@/globals.css'
 import { ChildrenLevel } from '@/components/ChildrenLevel.tsx'
+import { Skeleton } from '@/components/ui/skeleton';
 
 
-export function TaxonomyTree() {
-    const fetchhh: TreeNode[] = [
+export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
+    const treeData = [
         {
             node_id: 1,
-            graph_id: 1,
-            source_id: "123",
-            name: "$Root$",
+            graph_id: 100,
+            source_id: "root-001",
+            name: "Infraestructura Global",
+            metadata: { image_url: "https://api.icon/cloud.png", region: "AWS" },
+            parent_ids: [],
             children: [
                 {
                     node_id: 2,
-                    graph_id: 2,
-                    source_id: "222",
-                    name: "Food & Beverages",
+                    graph_id: 100,
+                    source_id: "dep-001",
+                    name: "Capa de Datos",
+                    parent_ids: [1],
                     children: [
                         {
-                            node_id: 3,
-                            graph_id: 3,
-                            source_id: "321",
-                            name: "Fresh Produce",
-                            children: [
-                                {
-                                    node_id: 182309182039128,
-                                    graph_id: 182309182039128,
-                                    source_id: "dsalkhaslkdjhasdlk",
-                                    name: "Fruits",
-                                    metadata: { key: "123", image_url: "https://cdn-icons-png.flaticon.com/128/3137/3137044.png" }
-                                },
-                                {
-                                    node_id: 9182409182999,
-                                    graph_id: 9182409182999,
-                                    source_id: "99128310298318391jkasjdj",
-                                    name: "Vegetables",
-                                    metadata: { key: "123", image_url: "https://cdn-icons-png.flaticon.com/128/3137/3137044.png" }
-                                }
-                            ]
-                        },
-                        {
                             node_id: 4,
-                            graph_id: 4,
-                            source_id: "333",
-                            name: "Dairy",
+                            graph_id: 100,
+                            source_id: "db-001",
+                            name: "PostgreSQL Master",
+                            metadata: { port: 5432, status: "active" },
+                            parent_ids: [2],
                             children: [
                                 {
-                                    node_id: 1782390712,
-                                    graph_id: 1782390712,
-                                    source_id: "nlkkkasdj9qwe9",
-                                    name: "Milk",
-                                },
-                                {
-                                    node_id: 9099182391283,
-                                    graph_id: 9099182391283,
-                                    source_id: "asdasdffffasdasd",
-                                    name: "Cheese",
-                                },
-
+                                    node_id: 10, // <--- ESTE NODO TIENE DOS PADRES (4 y 5)
+                                    graph_id: 100,
+                                    source_id: "sync-001",
+                                    name: "Servicio de Backup Híbrido",
+                                    metadata: { type: "Cross-platform" },
+                                    parent_ids: [4, 5],
+                                    children: []
+                                }
                             ]
                         }
                     ]
                 },
                 {
-                    node_id: 102,
-                    graph_id: 102,
-                    source_id: "222",
-                    name: "Household",
+                    node_id: 3,
+                    graph_id: 100,
+                    source_id: "dep-002",
+                    name: "Capa de Aplicación",
+                    parent_ids: [1],
                     children: [
                         {
-                            node_id: 33123123,
-                            graph_id: 33123123,
-                            source_id: "asdjaskdjaksd",
-                            name: "none",
+                            node_id: 5,
+                            graph_id: 100,
+                            source_id: "srv-001",
+                            name: "API Gateway",
+                            metadata: { auth: "JWT" },
+                            parent_ids: [3],
                             children: [
                                 {
-                                    node_id: 9998989899998,
-                                    graph_id: 9998989899998,
-                                    source_id: "lllllkasodl",
-                                    name: "Cleaning Supplies",
+                                    node_id: 10,
+                                    graph_id: 100,
+                                    source_id: "sync-001",
+                                    name: "Servicio de Backup Híbrido",
+                                    parent_ids: [4, 5],
+                                    children: []
                                 },
                                 {
-                                    node_id: 9900090898,
-                                    graph_id: 9900090898,
-                                    source_id: "nnnnnnjaklsdjhnaskdj",
-                                    name: "Paper Product",
+                                    node_id: 6,
+                                    graph_id: 100,
+                                    source_id: "srv-002",
+                                    name: "Microservicio Auth",
+                                    parent_ids: [5],
+                                    children: [
+                                        {
+                                            node_id: 7,
+                                            graph_id: 100,
+                                            source_id: "sub-srv-001",
+                                            name: "Módulo 2FA (Deep Child)",
+                                            metadata: { provider: "Google" },
+                                            parent_ids: [6],
+                                            children: []
+                                        }
+                                    ]
                                 }
                             ]
                         }
-                    ],
+                    ]
                 }
             ]
         }
-    ]
-
+    ];
     return (
-        <div className='flex flex-col justify-center min-h-1 m-5'>
-            {fetchhh.map((branch: TreeNode) => (
-                <ChildrenLevel treeNode={branch} depth={0} key={branch.node_id} />
-            ))}
-        </div>
+        <div className='min-h-1 m-5 w-12/12 --font-font-mono --color-primary grid '>
+            {isLoading ?
+                <div>
+                    <Skeleton className="h-5 w-25 mb-2" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-5" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-10" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-15" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-5" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-10" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-15" />
+                    <Skeleton className="h-5 w-25 mb-2 ml-20" />
+                </div>
+                :
+                treeData.map(branch => <ChildrenLevel treeNode={branch} depth={0} key={branch.node_id} />)
+            }
+        </div >
     )
 }
 
