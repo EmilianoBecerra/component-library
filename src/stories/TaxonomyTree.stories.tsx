@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import TaxonomyTreeSource from "./TaxonomyTree.tsx?raw";
-import { TaxonomyTree } from "./TaxonomyTree";
+import TaxonomyTreeSource from "@/components/TaxonomyTree?raw";
+import { TaxonomyTree } from "@/components/TaxonomyTree";
+
 
 
 

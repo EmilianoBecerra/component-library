@@ -1,7 +1,7 @@
-/* import type { TreeNode } from '@/interface/interface.ts' */
+
 import '@/globals.css'
-import { ChildrenLevel } from '@/components/ChildrenLevel.tsx'
 import { Skeleton } from '@/components/ui/skeleton';
+import { ChildrenLevel } from './ChildrenLevel';
 
 
 export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
@@ -11,7 +11,7 @@ export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
             graph_id: 100,
             source_id: "root-001",
             name: "Infraestructura Global",
-            metadata: { image_url: "https://api.icon/cloud.png", region: "AWS" },
+            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
             parent_ids: [],
             children: [
                 {
@@ -26,15 +26,15 @@ export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
                             graph_id: 100,
                             source_id: "db-001",
                             name: "PostgreSQL Master",
-                            metadata: { port: 5432, status: "active" },
+                            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
                             parent_ids: [2],
                             children: [
                                 {
-                                    node_id: 10, // <--- ESTE NODO TIENE DOS PADRES (4 y 5)
+                                    node_id: 10,
                                     graph_id: 100,
                                     source_id: "sync-001",
                                     name: "Servicio de Backup Híbrido",
-                                    metadata: { type: "Cross-platform" },
+                                    metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
                                     parent_ids: [4, 5],
                                     children: []
                                 }
@@ -62,6 +62,7 @@ export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
                                     graph_id: 100,
                                     source_id: "sync-001",
                                     name: "Servicio de Backup Híbrido",
+                                    metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "minion" },
                                     parent_ids: [4, 5],
                                     children: []
                                 },
@@ -77,7 +78,7 @@ export function TaxonomyTree({ isLoading }: { isLoading: boolean }) {
                                             graph_id: 100,
                                             source_id: "sub-srv-001",
                                             name: "Módulo 2FA (Deep Child)",
-                                            metadata: { provider: "Google" },
+                                            metadata: { image_url: "https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg", region: "apple" },
                                             parent_ids: [6],
                                             children: []
                                         }
