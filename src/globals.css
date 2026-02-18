@@ -9,7 +9,7 @@
 
 @layer base {
   :root {
-    font-family: "Inter", sans-serif;
+    --font-family: "Inter", sans-serif;
 
     /* 1. Base Color Palette - Tailwind  Colors */
     --tailwind-colors-base-white: 0 0% 100%;
@@ -297,7 +297,6 @@
   } 
 }
 
-/* Mobile Sidebar Customization */
 @layer components {
   /* Sidebar customization - applies to both mobile and desktop */
   [data-sidebar="sidebar"] {
@@ -385,4 +384,22 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+
+.skeleton {
+  display: flex;
+  align-items: baseline;
+  background-color: #afafaf;
+  height: auto;
+  width: 200px;
+  border-radius: 4px;
+  margin: 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
 }
