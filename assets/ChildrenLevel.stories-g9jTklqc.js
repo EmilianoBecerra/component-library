@@ -1,4 +1,4 @@
-import{C as r}from"./ChildrenLevel-BakwH7aD.js";import"./jsx-runtime-u17CrQMm.js";import"./iframe-DmFaTrW6.js";import"./preload-helper-B_lI8Z-o.js";import"./index-DYaVWwIu.js";import"./index-BMKP67xU.js";import"./index-U_ESzbnS.js";const n=`import type { TreeNode } from "@/interface/interface";\r
+import{C as r}from"./ChildrenLevel-CDDXI64E.js";import"./jsx-runtime-u17CrQMm.js";import"./iframe-DOE9zQDk.js";import"./preload-helper-B_lI8Z-o.js";import"./scroll-area-ikOl81J3.js";import"./index-B9oVnICJ.js";import"./index-BRRwjKX1.js";import"./index-CKC94nx8.js";const n=`import type { TreeNode } from "@/interface/interface";\r
 import {\r
   Collapsible,\r
   CollapsibleContent,\r
@@ -51,7 +51,7 @@ export function ChildrenLevel({ treeNode, depth = 1, expand, value, setNode }: {
                     setNode={setNode}\r
                   /> :\r
                   <div\r
-                    className="flex items-center gap-2"\r
+                    className="flex items-center gap-2 hover lightHover"\r
                     style={{ marginLeft: (depth + 1) * 5 }}\r
                     onClick={() => setNode(c)}\r
                   >\r
@@ -75,7 +75,7 @@ export function ChildrenLevel({ treeNode, depth = 1, expand, value, setNode }: {
     </Collapsible>\r
   )\r
 }\r
-`,s={title:"Example/TaxonomyTree/ChildrenLevel",component:r,parameters:{docs:{source:{code:n,language:"tsx",type:"code"}}}},e={args:{treeNode:{node_id:"1",graph_id:100,source_id:"root-001",name:"Infraestructura Global",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:[],children:[{node_id:"2",graph_id:100,source_id:"dep-001",name:"Capa de Datos",parent_ids:["1"],children:[{node_id:"4",graph_id:100,source_id:"db-001",name:"PostgreSQL Master",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["2"],children:[{node_id:"10",graph_id:100,source_id:"sync-001",name:"Servicio de Backup Híbrido",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["4","5"],children:[]}]}]},{node_id:"3",graph_id:100,source_id:"dep-002",name:"Capa de Aplicación",parent_ids:["1"],children:[{node_id:"5",graph_id:100,source_id:"srv-001",name:"API Gateway",metadata:{image_url:"JWT",primary:"red"},parent_ids:["3"],children:[{node_id:"10",graph_id:100,source_id:"sync-001",name:"Servicio de Backup Híbrido",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"minion"},parent_ids:["4","5"],children:[]},{node_id:"6",graph_id:100,source_id:"srv-002",name:"Microservicio Auth",parent_ids:["5"],children:[{node_id:"7",graph_id:100,source_id:"sub-srv-001",name:"Módulo 2FA (Deep Child)",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["6"],children:[]}]}]}]}]},depth:0,expand:!0,value:"",setNode:()=>{}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+`,c={title:"Example/TaxonomyTree/ChildrenLevel",component:r,parameters:{docs:{source:{code:n,language:"tsx",type:"code"}}}},e={args:{treeNode:{node_id:"1",graph_id:100,source_id:"root-001",name:"Infraestructura Global",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:[],children:[{node_id:"2",graph_id:100,source_id:"dep-001",name:"Capa de Datos",parent_ids:["1"],children:[{node_id:"4",graph_id:100,source_id:"db-001",name:"PostgreSQL Master",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["2"],children:[{node_id:"10",graph_id:100,source_id:"sync-001",name:"Servicio de Backup Híbrido",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["4","5"],children:[]}]}]},{node_id:"3",graph_id:100,source_id:"dep-002",name:"Capa de Aplicación",parent_ids:["1"],children:[{node_id:"5",graph_id:100,source_id:"srv-001",name:"API Gateway",metadata:{image_url:"JWT",primary:"red"},parent_ids:["3"],children:[{node_id:"10",graph_id:100,source_id:"sync-001",name:"Servicio de Backup Híbrido",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"minion"},parent_ids:["4","5"],children:[]},{node_id:"6",graph_id:100,source_id:"srv-002",name:"Microservicio Auth",parent_ids:["5"],children:[{node_id:"7",graph_id:100,source_id:"sub-srv-001",name:"Módulo 2FA (Deep Child)",metadata:{image_url:"https://res.cloudinary.com/dnrbiplhc/image/upload/v1771435320/tomato-svgrepo-com_gefort.svg",primary:"apple"},parent_ids:["6"],children:[]}]}]}]}]},depth:0,expand:!0,value:"",setNode:()=>{}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   args: {
     treeNode: {
       node_id: "1",
@@ -170,4 +170,4 @@ export function ChildrenLevel({ treeNode, depth = 1, expand, value, setNode }: {
     value: "",
     setNode: () => {}
   }
-}`,...e.parameters?.docs?.source}}};const c=["ChildrenLevelExample"];export{e as ChildrenLevelExample,c as __namedExportsOrder,s as default};
+}`,...e.parameters?.docs?.source}}};const m=["ChildrenLevelExample"];export{e as ChildrenLevelExample,m as __namedExportsOrder,c as default};

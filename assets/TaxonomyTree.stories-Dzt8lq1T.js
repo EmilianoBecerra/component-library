@@ -1,4 +1,4 @@
-import{T as r,b as o,d as a}from"./db-DhxOdJLy.js";import"./jsx-runtime-u17CrQMm.js";import"./index-DYaVWwIu.js";import"./iframe-DmFaTrW6.js";import"./preload-helper-B_lI8Z-o.js";import"./ChildrenLevel-BakwH7aD.js";import"./index-BMKP67xU.js";import"./index-U_ESzbnS.js";const t=`import '@/globals.css'\r
+import{T as r,b as o,d as a}from"./db-B3lqZL-g.js";import"./jsx-runtime-u17CrQMm.js";import"./index-B9oVnICJ.js";import"./iframe-DOE9zQDk.js";import"./preload-helper-B_lI8Z-o.js";import"./ChildrenLevel-CDDXI64E.js";import"./scroll-area-ikOl81J3.js";import"./index-BRRwjKX1.js";import"./index-CKC94nx8.js";const t=`import '@/globals.css'\r
 import type { TreeNode } from '@/interface/interface';\r
 import { Skeleton } from '@/components/ui/skeleton';\r
 import { ChildrenLevel } from './ChildrenLevel';\r
@@ -32,7 +32,7 @@ export function TaxonomyTree({ isLoading, expand, value, tree, setNode }: { isLo
     </div>\r
   )\r
 }\r
-`,n=o(a),N={title:"Example/TaxonomyTree",component:r,parameters:{docs:{source:{code:t,language:"tsx",type:"code"}}}},e={args:{isLoading:!1,expand:!0,value:"",tree:n,setNode:()=>{}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+`,n=o(a),b={title:"Example/TaxonomyTree",component:r,parameters:{docs:{source:{code:t,language:"tsx",type:"code"}}}},e={args:{isLoading:!1,expand:!0,value:"",tree:n,setNode:()=>{}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   args: {
     isLoading: false,
     expand: true,
@@ -40,4 +40,4 @@ export function TaxonomyTree({ isLoading, expand, value, tree, setNode }: { isLo
     tree: treeData,
     setNode: () => {}
   }
-}`,...e.parameters?.docs?.source}}};const b=["TaxonomyTreeCode"];export{e as TaxonomyTreeCode,b as __namedExportsOrder,N as default};
+}`,...e.parameters?.docs?.source}}};const x=["TaxonomyTreeCode"];export{e as TaxonomyTreeCode,x as __namedExportsOrder,b as default};

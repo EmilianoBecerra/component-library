@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as i}from"./index-BJGTUfQm.js";import{M as o}from"./blocks-Be7lUjFD.js";import"./iframe-DmFaTrW6.js";import"./preload-helper-B_lI8Z-o.js";import"./index-BMKP67xU.js";import"./index-U_ESzbnS.js";function t(r){const e={h1:"h1",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...r.components};return n.jsxs(n.Fragment,{children:[n.jsx(o,{title:"Component Library by Emiliano Becerra"}),`
+import{j as n}from"./jsx-runtime-u17CrQMm.js";import{useMDXComponents as i}from"./index-D8iqfOve.js";import{M as o}from"./blocks-OY-q13yH.js";import"./iframe-DOE9zQDk.js";import"./preload-helper-B_lI8Z-o.js";import"./index-BRRwjKX1.js";import"./index-CKC94nx8.js";function t(r){const e={h1:"h1",h2:"h2",li:"li",p:"p",strong:"strong",ul:"ul",...i(),...r.components};return n.jsxs(n.Fragment,{children:[n.jsx(o,{title:"Component Library by Emiliano Becerra"}),`
 `,n.jsx(e.h1,{id:"component-library",children:"Component Library"}),`
 `,n.jsx(e.p,{children:"Component library for viewing components on demand."}),`
 `,n.jsx(e.h2,{id:"components",children:"Components"}),`
