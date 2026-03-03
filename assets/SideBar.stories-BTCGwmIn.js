@@ -1,19 +1,23 @@
-import{S as r}from"./SideBar-B2zTfKuh.js";import"./jsx-runtime-u17CrQMm.js";const a=`import type { TreeNode } from "@/interface/interface";\r
+import{S as r}from"./SideBar-DVPPk3fa.js";import"./jsx-runtime-u17CrQMm.js";import"./InfoRow-Dy5jMV-F.js";const a=`import type { TreeNode } from "@/interface/interface";\r
 import { InfoRow } from "./InfoRow";\r
 \r
 export function SideBar({ node }: { node: TreeNode | undefined }) {\r
   return (\r
-    <div className="w-12/12 p-5 text-foreground">\r
-      <header className="flex flex-col">\r
+    <div className="w-12/12 h-12/12 p-5 text-foreground">\r
+      <header className="flex flex-col h-auto">\r
         <h2 className="font-bold text-2xl">Node Properties</h2>\r
-        <div className="flex flex-col mb-3">\r
-          <p className="capitalize">\r
-            ID: {node?.node_id ?? "-."}\r
-          </p>\r
-          <p className="capitalize">\r
-            Name: {node?.name ?? "-."}\r
-          </p>\r
-        </div>\r
+        {\r
+          node ?\r
+            <div className="flex flex-col mb-3">\r
+              <p className="capitalize">\r
+                ID: {node?.node_id ?? "-."}\r
+              </p>\r
+              <p className="capitalize">\r
+                Name: {node?.name ?? "-."}\r
+              </p>\r
+            </div>\r
+            : ""\r
+        }\r
       </header>\r
       <hr />\r
       <main>\r
@@ -30,7 +34,9 @@ export function SideBar({ node }: { node: TreeNode | undefined }) {\r
 \r
           </div>\r
           :\r
-          <p>Select a node to view info</p>\r
+          <div className="flex justify-center items-center h-200 text-3xl">\r
+            <p className=" w-6/12 text-center">Select a node in the tree to view its properties</p>\r
+          </div>\r
         }\r
       </main>\r
     </div>\r
@@ -52,4 +58,4 @@ export function SideBar({ node }: { node: TreeNode | undefined }) {\r
       parent_ids: []
     }
   }
-}`,...e.parameters?.docs?.source}}};const t=["SideBarCode"];export{e as SideBarCode,t as __namedExportsOrder,d as default};
+}`,...e.parameters?.docs?.source}}};const i=["SideBarCode"];export{e as SideBarCode,i as __namedExportsOrder,d as default};
