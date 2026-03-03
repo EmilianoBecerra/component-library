@@ -196,9 +196,7 @@
     --sidebar-background: var(--colors-sidebar-light);
     --sidebar-foreground: var(--colors-sidebar-foreground-light);
     --sidebar-primary: var(--colors-sidebar-primary-light);
-    --sidebar-primary-foreground: var(
-      --colors-sidebar-primary-foreground-light
-    );
+    --sidebar-primary-foreground: var(--colors-sidebar-primary-foreground-light);
     --sidebar-accent: var(--colors-sidebar-accent-light);
     --sidebar-accent-foreground: var(--colors-sidebar-accent-foreground-light);
     --sidebar-border: var(--colors-sidebar-border-light);
@@ -210,9 +208,11 @@
     --warning: 45.4 93.4% 47.5%;
     --warning-foreground: 40.6 96.1% 40.4%;
   }
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -262,6 +262,7 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 }
+
 /* 
 @layer base {
   * {
@@ -275,12 +276,8 @@
 @layer utilities {
   .shadow-sm-custom {
     box-shadow:
-      var(--shadow-sm-1-offset-x) var(--shadow-sm-1-offset-y)
-        var(--shadow-sm-1-blur-radius) var(--shadow-sm-1-spread-radius)
-        var(--shadow-sm-1-color),
-      var(--shadow-sm-2-offset-x) var(--shadow-sm-2-offset-y)
-        var(--shadow-sm-2-blur-radius) var(--shadow-sm-2-spread-radius)
-        var(--shadow-sm-2-color);
+      var(--shadow-sm-1-offset-x) var(--shadow-sm-1-offset-y) var(--shadow-sm-1-blur-radius) var(--shadow-sm-1-spread-radius) var(--shadow-sm-1-color),
+      var(--shadow-sm-2-offset-x) var(--shadow-sm-2-offset-y) var(--shadow-sm-2-blur-radius) var(--shadow-sm-2-spread-radius) var(--shadow-sm-2-color);
   }
 
   .dropdown-menu-custom {
@@ -288,16 +285,13 @@
     border: var(--border-width-border, 1px) solid var(--base-border, #ded9da);
     background: var(--base-popover, #fff);
     box-shadow:
-      var(--shadow-md-1-offset-x) var(--shadow-md-1-offset-y)
-        var(--shadow-md-1-blur-radius) var(--shadow-md-1-spread-radius)
-        var(--shadow-md-1-color),
-      var(--shadow-md-2-offset-x) var(--shadow-md-2-offset-y)
-        var(--shadow-md-2-blur-radius) var(--shadow-md-2-spread-radius)
-        var(--shadow-md-2-color);
-  } 
+      var(--shadow-md-1-offset-x) var(--shadow-md-1-offset-y) var(--shadow-md-1-blur-radius) var(--shadow-md-1-spread-radius) var(--shadow-md-1-color),
+      var(--shadow-md-2-offset-x) var(--shadow-md-2-offset-y) var(--shadow-md-2-blur-radius) var(--shadow-md-2-spread-radius) var(--shadow-md-2-color);
+  }
 }
 
 @layer components {
+
   /* Sidebar customization - applies to both mobile and desktop */
   [data-sidebar="sidebar"] {
     background: var(--base-sidebar, #f0eeee) !important;
@@ -313,7 +307,8 @@
   [data-radix-dialog-overlay] {
     top: var(--header-height, 4rem) !important;
     height: calc(100vh - var(--header-height, 4rem)) !important;
-    z-index: 40 !important; /* Below navbar (z-50) but above content */
+    z-index: 40 !important;
+    /* Below navbar (z-50) but above content */
   }
 }
 
@@ -387,19 +382,20 @@
 }
 
 
-.skeleton {
-  display: flex;
-  align-items: baseline;
-  background-color: #afafaf;
-  height: auto;
-  width: 200px;
-  border-radius: 4px;
-  margin: 5px;
-  animation: pulse 1.5s infinite ease-in-out;
+@layer base {
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-@keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+.hover {
+  margin: 2px;
+  padding: 2px;
+}
+
+.lightHover:hover {
+  background-color: rgba(205, 205, 205, 0.224);
+  border-radius: 5px;
 }
