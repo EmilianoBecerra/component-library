@@ -1,4 +1,4 @@
-import{T as r}from"./TaxonomyTree-C-MCPjf9.js";import"./jsx-runtime-u17CrQMm.js";import"./index-CUPX-_mX.js";import"./iframe-TnTOlIVT.js";import"./preload-helper-B_lI8Z-o.js";import"./ChildrenLevel-aEeO4MG8.js";import"./index-CYBO4cka.js";import"./index-Bsy2Gl-X.js";const o=`import '@/globals.css'\r
+import{T as r,b as o,d as a}from"./db-DhxOdJLy.js";import"./jsx-runtime-u17CrQMm.js";import"./index-DYaVWwIu.js";import"./iframe-DmFaTrW6.js";import"./preload-helper-B_lI8Z-o.js";import"./ChildrenLevel-BakwH7aD.js";import"./index-BMKP67xU.js";import"./index-U_ESzbnS.js";const t=`import '@/globals.css'\r
 import type { TreeNode } from '@/interface/interface';\r
 import { Skeleton } from '@/components/ui/skeleton';\r
 import { ChildrenLevel } from './ChildrenLevel';\r
@@ -32,10 +32,12 @@ export function TaxonomyTree({ isLoading, expand, value, tree, setNode }: { isLo
     </div>\r
   )\r
 }\r
-`,c={title:"Example/TaxonomyTree",component:r,parameters:{docs:{source:{code:o,language:"tsx",type:"code"}}}},e={args:{isLoading:!1,expand:!0,value:""}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+`,n=o(a),N={title:"Example/TaxonomyTree",component:r,parameters:{docs:{source:{code:t,language:"tsx",type:"code"}}}},e={args:{isLoading:!1,expand:!0,value:"",tree:n,setNode:()=>{}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   args: {
     isLoading: false,
     expand: true,
-    value: ""
+    value: "",
+    tree: treeData,
+    setNode: () => {}
   }
-}`,...e.parameters?.docs?.source}}};const p=["TaxonomyTreeCode"];export{e as TaxonomyTreeCode,p as __namedExportsOrder,c as default};
+}`,...e.parameters?.docs?.source}}};const b=["TaxonomyTreeCode"];export{e as TaxonomyTreeCode,b as __namedExportsOrder,N as default};
